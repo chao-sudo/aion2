@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://aion2.wiki/sitemap.xml",
+    sitemap: "https://aion2.world/sitemap.xml",
   };
 }

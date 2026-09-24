@@ -6,7 +6,7 @@ import { classSlugs } from "@/lib/classes";
 import { legalSlugs } from "@/lib/legal";
 import { staticPageSlugs } from "@/lib/pages";
 
-const BASE = "https://aion2.wiki";
+const BASE = "https://aion2.world";
 
 function localePath(locale: string, path: string) {
   if (locale === defaultLocale) return BASE + path;

@@ -37,7 +37,7 @@ const enContact: StaticPage = {
     {
       heading: "Get in touch",
       body: [
-        "For factual corrections or new guide requests, email hello@aion2.wiki.",
+        "For factual corrections or new guide requests, email hello@aion2.world.",
         "For the fastest community answers, join the official AION 2 Discord and ask in the community channels.",
       ],
     },
@@ -81,7 +81,7 @@ const deContact: StaticPage = {
     {
       heading: "Kontakt aufnehmen",
       body: [
-        "Für Korrekturen oder neue Guide-Wünsche schreibe an hello@aion2.wiki.",
+        "Für Korrekturen oder neue Guide-Wünsche schreibe an hello@aion2.world.",
         "Für schnelle Community-Antworten tritt dem offiziellen AION 2 Discord bei und frage in den Community-Kanälen.",
       ],
     },
@@ -125,7 +125,7 @@ const koContact: StaticPage = {
     {
       heading: "연락 방법",
       body: [
-        "사실관계 정정이나 새 가이드 요청은 hello@aion2.wiki로 보내주세요.",
+        "사실관계 정정이나 새 가이드 요청은 hello@aion2.world로 보내주세요.",
         "빠른 커뮤니티 답변은 공식 아이온 2 디스코드에서 확인할 수 있습니다.",
       ],
     },
@@ -169,7 +169,7 @@ const jaContact: StaticPage = {
     {
       heading: "連絡方法",
       body: [
-        "事実の修正や新しいガイドのご要望は hello@aion2.wiki までお送りください。",
+        "事実の修正や新しいガイドのご要望は hello@aion2.world までお送りください。",
         "早めの回答が欲しい場合は、公式アイオン2 Discordのコミュニティチャンネルをご利用ください。",
       ],
     },
