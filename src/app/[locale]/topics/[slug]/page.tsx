@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { topics, getTopicByLocale } from "@/lib/topics";
 import ArticleHeader from "@/components/ArticleHeader";
 import MDXContent from "@/components/MDXContent";
@@ -29,12 +30,14 @@ export async function generateMetadata({
   const locale = isLocale(raw) ? raw : "en";
   const topic = getTopicByLocale(slug, locale);
   if (!topic) return {};
-  return {
+  return pageMetadata({
+    locale,
+    path: `/topics/${slug}`,
     title: topic.title,
     description: topic.description,
     keywords: topic.keywords,
-    alternates: { canonical: l(locale, "/topics/${slug}") },
-  };
+    type: "article",
+  });
 }
 
 export default async function TopicPage({

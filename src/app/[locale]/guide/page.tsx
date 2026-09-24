@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getGuides } from "@/lib/guides";
 import { getDictionary } from "@/i18n/dictionaries";
 import { Icon } from "@/components/icons";
@@ -20,10 +21,13 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "en";
   const d = getDictionary(locale);
-  return {
-    title: `AION 2 ${d.primaryNav.find((i) => i.href === "/guide")?.label ?? "Guides"} — All Long-Form Guides`,
-    alternates: { canonical: l(locale, "/guide") },
-  };
+  const title = `AION 2 ${d.primaryNav.find((i) => i.href === "/guide")?.label ?? "Guides"} — All Long-Form Guides`;
+  return pageMetadata({
+    locale,
+    path: "/guide",
+    title,
+    description: "Browse long-form AION 2 guides for beginners, release information, and class rankings.",
+  });
 }
 
 export default async function GuideHubPage({

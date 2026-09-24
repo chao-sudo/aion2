@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getClass, classSlugs } from "@/lib/classes";
 import { getDictionary } from "@/i18n/dictionaries";
 import { loadArticle } from "@/lib/content";
@@ -31,11 +32,13 @@ export async function generateMetadata({
   const locale = isLocale(raw) ? raw : "en";
   const c = getClass(locale, slug);
   if (!c) return {};
-  return {
+  return pageMetadata({
+    locale,
+    path: `/classes/${slug}`,
     title: `${c.name} Guide — AION 2 ${c.role}`,
     description: c.description,
-    alternates: { canonical: l(locale, "/classes/${slug}") },
-  };
+    type: "article",
+  });
 }
 
 export default async function ClassPage({

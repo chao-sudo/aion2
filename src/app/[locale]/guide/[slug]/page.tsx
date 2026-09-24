@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getGuides, guideSlugs } from "@/lib/guides";
 import { loadArticle } from "@/lib/content";
 import ArticleHeader from "@/components/ArticleHeader";
@@ -30,11 +31,13 @@ export async function generateMetadata({
   const locale = isLocale(raw) ? raw : "en";
   const g = getGuides(locale).find((x) => x.slug === slug);
   if (!g) return {};
-  return {
+  return pageMetadata({
+    locale,
+    path: `/guide/${slug}`,
     title: g.title,
     description: g.desc,
-    alternates: { canonical: l(locale, "/guide/${slug}") },
-  };
+    type: "article",
+  });
 }
 
 export default async function GuidePage({

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { legalSlugs, getLegalPage } from "@/lib/legal";
 import ArticleHeader from "@/components/ArticleHeader";
 
@@ -28,11 +29,12 @@ export async function generateMetadata({
   const locale = isLocale(raw) ? raw : "en";
   const page = getLegalPage(slug, locale);
   if (!page) return {};
-  return {
+  return pageMetadata({
+    locale,
+    path: `/${slug}`,
     title: page.title + " — AION 2 Wiki",
     description: page.intro,
-    alternates: { canonical: l(locale, "/" + slug) },
-  };
+  });
 }
 
 export default async function LegalPage({

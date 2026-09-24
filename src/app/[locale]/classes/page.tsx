@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getClasses } from "@/lib/classes";
 import { getHome } from "@/lib/home";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -21,10 +22,13 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "en";
   const d = getDictionary(locale);
-  return {
-    title: `AION 2 ${d.primaryNav.find((i) => i.href === "/classes")?.label ?? "Classes"} — All Classes Explained`,
-    alternates: { canonical: l(locale, "/classes") },
-  };
+  const title = `AION 2 ${d.primaryNav.find((i) => i.href === "/classes")?.label ?? "Classes"} — All Classes Explained`;
+  return pageMetadata({
+    locale,
+    path: "/classes",
+    title,
+    description: "Compare every AION 2 class by role, weapon, strengths, and gameplay style.",
+  });
 }
 
 export default async function ClassesPage({

@@ -9,8 +9,8 @@ import { staticPageSlugs } from "@/lib/pages";
 const BASE = "https://aion2.world";
 
 function localePath(locale: string, path: string) {
-  if (locale === defaultLocale) return BASE + path;
-  return BASE + "/" + locale + path;
+  if (locale === defaultLocale) return `${BASE}${path}/`;
+  return `${BASE}/${locale}${path}/`;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -12,14 +12,23 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  // Keep the default-language URL clean: /en/... permanently redirects to /...
+  const defaultLocalePath = `/${defaultLocale}`;
+  if (pathname === defaultLocalePath || pathname.startsWith(`${defaultLocalePath}/`)) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(defaultLocalePath.length) || "/";
+    return NextResponse.redirect(url, 308);
+  }
+
   const hasLocale = locales.some(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
   if (hasLocale) return NextResponse.next();
 
+  // Serve the default language at clean URLs by rewriting internally.
   const url = request.nextUrl.clone();
   url.pathname = `/${defaultLocale}${pathname}`;
-  return NextResponse.redirect(url);
+  return NextResponse.rewrite(url);
 }
 
 export const config = {

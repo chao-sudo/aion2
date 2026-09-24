@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getHome, getFinalCta } from "@/lib/home";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getClasses } from "@/lib/classes";
@@ -25,17 +26,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "en";
-  const home = getHome(locale);
-  return {
-    title: `AION 2 Wiki — Aerial Combat MMORPG, Classes & Guides`,
+  return pageMetadata({
+    locale,
+    path: "/",
+    title: "AION 2 Wiki — Aerial Combat MMORPG, Classes & Guides",
     description:
       "AION 2 Wiki: fan-made guides for NCSOFT's Unreal Engine 5 aerial-combat MMORPG. Classes, tier list, release date and beginner tips in 4 languages.",
     keywords: "AION 2, NCSOFT, MMORPG, classes, guides, release date, tier list, Templar",
-    alternates: {
-      canonical: locale === "en" ? "/" : `/${locale}`,
-      languages: { en: "/", de: "/de", ko: "/ko", ja: "/ja" },
-    },
-  };
+  });
 }
 
 export default async function HomePage({

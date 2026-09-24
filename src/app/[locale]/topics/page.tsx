@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getTopics, topicCategories } from "@/lib/topics";
 import ArticleHeader from "@/components/ArticleHeader";
 import { Icon } from "@/components/icons";
@@ -22,11 +23,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "en";
-  return {
+  return pageMetadata({
+    locale,
+    path: "/topics",
     title: "AION 2 Topics — Guides, Classes, Release & More",
     description: "Browse the AION 2 topic hub: release date, classes, tier list, PvP, builds, reviews, platform and server guides.",
-    alternates: { canonical: l(locale, "/topics") },
-  };
+  });
 }
 
 export default async function TopicsHubPage({

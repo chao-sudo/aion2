@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
+import { pageMetadata } from "@/lib/seo";
 import { getStaticPage } from "@/lib/pages";
 import ArticleHeader from "@/components/ArticleHeader";
 
@@ -13,7 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "en";
   const page = getStaticPage("about", locale);
-  return { title: page ? page.title : "About AION 2 Wiki", description: page ? page.intro : "", alternates: { canonical: l(locale, "/about") } };
+  return pageMetadata({
+    locale,
+    path: "/about",
+    title: page?.title ?? "About AION 2 Wiki",
+    description: page?.intro ?? "",
+  });
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {

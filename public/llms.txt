@@ -1,0 +1,40 @@
+# AION 2 Wiki
+
+> Fan-made AION 2 reference and guide site covering classes, long-form guides, and topic explainers in English, German, Korean, and Japanese. This independent wiki is not affiliated with NCSOFT.
+
+Canonical URL: https://aion2.world/
+Default language: English (en)
+Available languages: en, de, ko, ja
+Machine-readable sitemap: https://aion2.world/sitemap.xml
+
+## Main pages
+
+- [Home](https://aion2.world/): Overview of AION 2, featured classes, and key guide entry points.
+- [Classes](https://aion2.world/classes/): All AION 2 classes with roles, weapons, and short summaries.
+- [Guides](https://aion2.world/guide/): Long-form beginner, release-date, and tier-list guides.
+- [Topics](https://aion2.world/topics/): Keyword-based topic hubs for release, access, gameplay, platforms, and community questions.
+- [About](https://aion2.world/about/): Site purpose, editorial approach, and contact overview.
+- [Contact](https://aion2.world/contact/): Contact information and enquiry categories.
+
+## Class guides
+
+- [Templar](https://aion2.world/classes/templar/): Main tank class guide.
+- [Gladiator](https://aion2.world/classes/gladiator/): Frontline bruiser class guide.
+- [Assassin](https://aion2.world/classes/assassin/): Melee burst DPS class guide.
+- [Ranger](https://aion2.world/classes/ranger/): Ranged kiting DPS class guide.
+- [Sorcerer](https://aion2.world/classes/sorcerer/): Ranged burst caster class guide.
+- [Spiritmaster](https://aion2.world/classes/spiritmaster/): Pet and summoning DPS class guide.
+- [Cleric](https://aion2.world/classes/cleric/): Main healer class guide.
+- [Chanter](https://aion2.world/classes/chanter/): Hybrid support and DPS class guide.
+
+## Long-form guides
+
+- [Beginner guide](https://aion2.world/guide/beginner-guide/): First-hours orientation, class choice, flight basics, and early progression.
+- [Release date guide](https://aion2.world/guide/release-date/): Release and availability information.
+- [Tier list](https://aion2.world/guide/tier-list/): Class comparisons for PvE and PvP contexts.
+
+## Policies and discovery
+
+- [Privacy policy](https://aion2.world/privacy/): Privacy policy.
+- [Terms of use](https://aion2.world/terms/): Terms of use.
+- [XML sitemap](https://aion2.world/sitemap.xml): Full list of site URLs.
