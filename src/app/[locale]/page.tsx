@@ -10,6 +10,7 @@ import SectionTitle from "@/components/SectionTitle";
 import { STEAM_URL, DISCORD_URL } from "@/components/Header";
 
 function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
   return `/${locale}${href}`;
 }
 
@@ -31,8 +32,8 @@ export async function generateMetadata({
       "AION 2 Wiki: fan-made guides for NCSOFT's Unreal Engine 5 aerial-combat MMORPG. Classes, tier list, release date and beginner tips in 4 languages.",
     keywords: "AION 2, NCSOFT, MMORPG, classes, guides, release date, tier list, Templar",
     alternates: {
-      canonical: `/${locale}`,
-      languages: { en: "/en", de: "/de", ko: "/ko", ja: "/ja" },
+      canonical: locale === "en" ? "/" : `/${locale}`,
+      languages: { en: "/", de: "/de", ko: "/ko", ja: "/ja" },
     },
   };
 }
@@ -286,3 +287,5 @@ export default async function HomePage({
     </div>
   );
 }
+
+

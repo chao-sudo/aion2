@@ -7,6 +7,11 @@ import { loadArticle } from "@/lib/content";
 import ArticleHeader from "@/components/ArticleHeader";
 import MDXContent from "@/components/MDXContent";
 
+function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
+  return `/${locale}${href}`;
+}
+
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
@@ -29,7 +34,7 @@ export async function generateMetadata({
   return {
     title: `${c.name} Guide — AION 2 ${c.role}`,
     description: c.description,
-    alternates: { canonical: `/${locale}/classes/${slug}` },
+    alternates: { canonical: l(locale, "/classes/${slug}") },
   };
 }
 

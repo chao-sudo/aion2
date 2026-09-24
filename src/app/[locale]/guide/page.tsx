@@ -8,6 +8,7 @@ import { Icon } from "@/components/icons";
 import ArticleHeader from "@/components/ArticleHeader";
 
 function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
   return `/${locale}${href}`;
 }
 
@@ -21,7 +22,7 @@ export async function generateMetadata({
   const d = getDictionary(locale);
   return {
     title: `AION 2 ${d.primaryNav.find((i) => i.href === "/guide")?.label ?? "Guides"} — All Long-Form Guides`,
-    alternates: { canonical: `/${locale}/guide` },
+    alternates: { canonical: l(locale, "/guide") },
   };
 }
 
@@ -56,3 +57,6 @@ export default async function GuideHubPage({
     </div>
   );
 }
+
+
+

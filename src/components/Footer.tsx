@@ -5,6 +5,7 @@ import type { Locale } from "@/i18n/config";
 import { STEAM_URL } from "@/components/Header";
 
 function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
   return `/${locale}${href}`;
 }
 

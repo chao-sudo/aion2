@@ -47,7 +47,7 @@ const en: Dictionary = {
   ],
   languagesTitle: "Languages · Sprachen · 언어 · 言語",
   languages: [
-    { code: "en", flag: "🇬🇧", label: "English", href: "/en" },
+    { code: "en", flag: "🇬🇧", label: "English", href: "/" },
     { code: "de", flag: "🇩🇪", label: "Deutsch", href: "/de" },
     { code: "ko", flag: "🇰🇷", label: "한국어", href: "/ko" },
     { code: "ja", flag: "🇯🇵", label: "日本語", href: "/ja" },
@@ -108,7 +108,7 @@ const de: Dictionary = {
   ],
   languagesTitle: "Languages · Sprachen · 언어 · 言語",
   languages: [
-    { code: "en", flag: "🇬🇧", label: "English", href: "/en" },
+    { code: "en", flag: "🇬🇧", label: "English", href: "/" },
     { code: "de", flag: "🇩🇪", label: "Deutsch", href: "/de" },
     { code: "ko", flag: "🇰🇷", label: "한국어", href: "/ko" },
     { code: "ja", flag: "🇯🇵", label: "日本語", href: "/ja" },
@@ -168,7 +168,7 @@ const ko: Dictionary = {
   ],
   languagesTitle: "Languages · Sprachen · 언어 · 言語",
   languages: [
-    { code: "en", flag: "🇬🇧", label: "English", href: "/en" },
+    { code: "en", flag: "🇬🇧", label: "English", href: "/" },
     { code: "de", flag: "🇩🇪", label: "Deutsch", href: "/de" },
     { code: "ko", flag: "🇰🇷", label: "한국어", href: "/ko" },
     { code: "ja", flag: "🇯🇵", label: "日本語", href: "/ja" },
@@ -228,7 +228,7 @@ const ja: Dictionary = {
   ],
   languagesTitle: "Languages · Sprachen · 언어 · 言語",
   languages: [
-    { code: "en", flag: "🇬🇧", label: "English", href: "/en" },
+    { code: "en", flag: "🇬🇧", label: "English", href: "/" },
     { code: "de", flag: "🇩🇪", label: "Deutsch", href: "/de" },
     { code: "ko", flag: "🇰🇷", label: "한국어", href: "/ko" },
     { code: "ja", flag: "🇯🇵", label: "日本語", href: "/ja" },
@@ -274,3 +274,4 @@ const dict: Record<Locale, Dictionary> = { en, de, ko, ja };
 export function getDictionary(locale: Locale): Dictionary {
   return dict[locale] ?? en;
 }
+

@@ -7,6 +7,7 @@ import ArticleHeader from "@/components/ArticleHeader";
 import { Icon } from "@/components/icons";
 
 function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
   return `/${locale}${href}`;
 }
 
@@ -24,7 +25,7 @@ export async function generateMetadata({
   return {
     title: "AION 2 Topics — Guides, Classes, Release & More",
     description: "Browse the AION 2 topic hub: release date, classes, tier list, PvP, builds, reviews, platform and server guides.",
-    alternates: { canonical: `/${locale}/topics` },
+    alternates: { canonical: l(locale, "/topics") },
   };
 }
 
@@ -65,3 +66,5 @@ export default async function TopicsHubPage({
     </div>
   );
 }
+
+

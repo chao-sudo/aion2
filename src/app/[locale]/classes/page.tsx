@@ -9,6 +9,7 @@ import { Icon, type IconName } from "@/components/icons";
 import ArticleHeader from "@/components/ArticleHeader";
 
 function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
   return `/${locale}${href}`;
 }
 
@@ -22,7 +23,7 @@ export async function generateMetadata({
   const d = getDictionary(locale);
   return {
     title: `AION 2 ${d.primaryNav.find((i) => i.href === "/classes")?.label ?? "Classes"} — All Classes Explained`,
-    alternates: { canonical: `/${locale}/classes` },
+    alternates: { canonical: l(locale, "/classes") },
   };
 }
 
@@ -92,3 +93,7 @@ export default async function ClassesPage({
     </div>
   );
 }
+
+
+
+

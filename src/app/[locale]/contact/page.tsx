@@ -4,11 +4,16 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { getStaticPage } from "@/lib/pages";
 import ArticleHeader from "@/components/ArticleHeader";
 
+function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
+  return `/${locale}${href}`;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale: raw } = await params;
   const locale = isLocale(raw) ? raw : "en";
   const page = getStaticPage("contact", locale);
-  return { title: page ? page.title : "Contact AION 2 Wiki", description: page ? page.intro : "", alternates: { canonical: `/${locale}/contact` } };
+  return { title: page ? page.title : "Contact AION 2 Wiki", description: page ? page.intro : "", alternates: { canonical: l(locale, "/contact") } };
 }
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {

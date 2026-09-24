@@ -12,6 +12,7 @@ export const DISCORD_URL = "https://discord.gg/aion2official";
 export const YOUTUBE_URL = "https://www.youtube.com/@Aion2Official";
 
 function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
   return `/${locale}${href}`;
 }
 

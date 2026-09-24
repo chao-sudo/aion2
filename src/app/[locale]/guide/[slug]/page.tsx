@@ -6,6 +6,11 @@ import { loadArticle } from "@/lib/content";
 import ArticleHeader from "@/components/ArticleHeader";
 import MDXContent from "@/components/MDXContent";
 
+function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
+  return `/${locale}${href}`;
+}
+
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
@@ -28,7 +33,7 @@ export async function generateMetadata({
   return {
     title: g.title,
     description: g.desc,
-    alternates: { canonical: `/${locale}/guide/${slug}` },
+    alternates: { canonical: l(locale, "/guide/${slug}") },
   };
 }
 

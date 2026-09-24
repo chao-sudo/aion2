@@ -5,6 +5,11 @@ import { topics, getTopicByLocale } from "@/lib/topics";
 import ArticleHeader from "@/components/ArticleHeader";
 import MDXContent from "@/components/MDXContent";
 
+function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
+  return `/${locale}${href}`;
+}
+
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
@@ -28,7 +33,7 @@ export async function generateMetadata({
     title: topic.title,
     description: topic.description,
     keywords: topic.keywords,
-    alternates: { canonical: `/${locale}/topics/${slug}` },
+    alternates: { canonical: l(locale, "/topics/${slug}") },
   };
 }
 

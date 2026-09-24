@@ -4,6 +4,11 @@ import { locales, isLocale, type Locale } from "@/i18n/config";
 import { legalSlugs, getLegalPage } from "@/lib/legal";
 import ArticleHeader from "@/components/ArticleHeader";
 
+function l(locale: Locale, href: string) {
+  if (locale === "en") return href;
+  return `/${locale}${href}`;
+}
+
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = [];
   for (const locale of locales) {
@@ -26,7 +31,7 @@ export async function generateMetadata({
   return {
     title: page.title + " — AION 2 Wiki",
     description: page.intro,
-    alternates: { canonical: "/" + locale + "/" + slug },
+    alternates: { canonical: l(locale, "/" + slug) },
   };
 }
 
