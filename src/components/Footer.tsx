@@ -117,6 +117,12 @@ export default function Footer({ locale }: { locale: Locale }) {
             <Link href={l(locale, d.footer.legal.terms.href)} className="text-muted hover:text-gold2">
               {d.footer.legal.terms.label}
             </Link>
+            <Link href={l(locale, d.footer.legal.about.href)} className="text-muted hover:text-gold2">
+              {d.footer.legal.about.label}
+            </Link>
+            <Link href={l(locale, d.footer.legal.contact.href)} className="text-muted hover:text-gold2">
+              {d.footer.legal.contact.label}
+            </Link>
             <a href={STEAM_URL} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold2">
               {d.footer.buyOnSteam}
             </a>

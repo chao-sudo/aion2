@@ -20,7 +20,7 @@ export type Dictionary = {
     resourcesTitle: string;
     resources: NavItem[];
     official: { label: string; url: string }[];
-    legal: { privacy: NavItem; terms: NavItem };
+    legal: { privacy: NavItem; terms: NavItem; about: NavItem; contact: NavItem };
     copyright: string;
     buyOnSteam: string;
   };
@@ -81,7 +81,7 @@ const en: Dictionary = {
       { label: "Official Discord", url: "https://discord.gg/aion2official" },
       { label: "Official YouTube", url: "https://www.youtube.com/@Aion2Official" },
     ],
-    legal: { privacy: { label: "Privacy Policy", href: "/privacy" }, terms: { label: "Terms of Service", href: "/terms" } },
+    legal: { privacy: { label: "Privacy Policy", href: "/privacy" }, terms: { label: "Terms of Service", href: "/terms" }, about: { label: "About", href: "/about" }, contact: { label: "Contact", href: "/contact" } },
     copyright: "AION2 wiki · Fan site, not affiliated with NCSOFT.",
     buyOnSteam: "Play on Steam →",
   },
@@ -142,7 +142,7 @@ const de: Dictionary = {
       { label: "Offizieller Discord", url: "https://discord.gg/aion2official" },
       { label: "Offizieller YouTube", url: "https://www.youtube.com/@Aion2Official" },
     ],
-    legal: { privacy: { label: "Datenschutz", href: "/privacy" }, terms: { label: "Nutzungsbedingungen", href: "/terms" } },
+    legal: { privacy: { label: "Datenschutz", href: "/privacy" }, terms: { label: "Nutzungsbedingungen", href: "/terms" }, about: { label: "Über uns", href: "/about" }, contact: { label: "Kontakt", href: "/contact" } },
     copyright: "AION2 Wiki · Fanseite, nicht mit NCSOFT verbunden.",
     buyOnSteam: "Auf Steam spielen →",
   },
@@ -202,7 +202,7 @@ const ko: Dictionary = {
       { label: "공식 디스코드", url: "https://discord.gg/aion2official" },
       { label: "공식 유튜브", url: "https://www.youtube.com/@Aion2Official" },
     ],
-    legal: { privacy: { label: "개인정보 처리방침", href: "/privacy" }, terms: { label: "이용약관", href: "/terms" } },
+    legal: { privacy: { label: "개인정보 처리방침", href: "/privacy" }, terms: { label: "이용약관", href: "/terms" }, about: { label: "소개", href: "/about" }, contact: { label: "문의", href: "/contact" } },
     copyright: "AION2 위키 · 엔씨소프트와 무관한 팬 사이트.",
     buyOnSteam: "Steam에서 플레이 →",
   },
@@ -262,7 +262,7 @@ const ja: Dictionary = {
       { label: "公式Discord", url: "https://discord.gg/aion2official" },
       { label: "公式YouTube", url: "https://www.youtube.com/@Aion2Official" },
     ],
-    legal: { privacy: { label: "プライバシーポリシー", href: "/privacy" }, terms: { label: "利用規約", href: "/terms" } },
+    legal: { privacy: { label: "プライバシーポリシー", href: "/privacy" }, terms: { label: "利用規約", href: "/terms" }, about: { label: "サイトについて", href: "/about" }, contact: { label: "お問い合わせ", href: "/contact" } },
     copyright: "AION2 Wiki · NCSOFTとは無関係のファンサイト。",
     buyOnSteam: "Steamでプレイ →",
   },

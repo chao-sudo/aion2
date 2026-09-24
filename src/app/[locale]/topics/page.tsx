@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
-import { topics, topicCategories } from "@/lib/topics";
+import { getTopics, topicCategories } from "@/lib/topics";
 import ArticleHeader from "@/components/ArticleHeader";
 import { Icon } from "@/components/icons";
 
@@ -41,7 +41,7 @@ export default async function TopicsHubPage({
       <ArticleHeader eyebrow="Topics" title="AION 2 Topics" description="Every keyword hub in one place, filtered from multi-source research." />
       <div className="max-w-5xl mx-auto pb-20 space-y-12">
         {topicCategories.map((category) => {
-          const items = topics.filter((t) => t.category === category);
+          const items = getTopics(locale).filter((t) => t.category === category);
           if (items.length === 0) return null;
           return (
             <section key={category}>

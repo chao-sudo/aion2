@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/i18n/config";
-import { topics, getTopic } from "@/lib/topics";
+import { topics, getTopicByLocale } from "@/lib/topics";
 import ArticleHeader from "@/components/ArticleHeader";
 import MDXContent from "@/components/MDXContent";
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   const locale = isLocale(raw) ? raw : "en";
-  const topic = getTopic(slug);
+  const topic = getTopicByLocale(slug, locale);
   if (!topic) return {};
   return {
     title: topic.title,
@@ -40,7 +40,7 @@ export default async function TopicPage({
   const { locale: raw, slug } = await params;
   if (!isLocale(raw)) notFound();
   const locale = raw;
-  const topic = getTopic(slug);
+  const topic = getTopicByLocale(slug, locale);
   if (!topic) notFound();
   return (
     <div className="mx-auto w-full max-w-content px-6 md:px-10 lg:px-16">

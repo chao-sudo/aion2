@@ -1,4 +1,7 @@
 import type { Locale } from "@/i18n/config";
+import { deTopics } from "@/lib/topics.de";
+import { koTopics } from "@/lib/topics.ko";
+import { jaTopics } from "@/lib/topics.ja";
 
 export type Topic = {
   slug: string;
@@ -185,4 +188,19 @@ export const topics: Topic[] = [
 
 export function getTopic(slug: string): Topic | undefined {
   return topics.find((t) => t.slug === slug);
+}
+
+export function getTopics(locale: Locale): Topic[] {
+  if (locale === "de" || locale === "ko" || locale === "ja") {
+    const source = locale === "de" ? deTopics : locale === "ko" ? koTopics : jaTopics;
+    return topics.map((t) => {
+      const localized = source.find((x) => x.slug === t.slug);
+      return localized ? { ...t, ...localized } : t;
+    });
+  }
+  return topics;
+}
+
+export function getTopicByLocale(slug: string, locale: Locale): Topic | undefined {
+  return getTopics(locale).find((t) => t.slug === slug);
 }
