@@ -18,9 +18,9 @@ const config: Config = {
         line: "hsla(205, 68%, 55%, 0.18)",
       },
       fontFamily: {
-        display: ["Metamorphous", '"Cormorant Garamond"', "serif"],
-        serif: ['"Cormorant Garamond"', "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-cormorant)", "serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1240px",

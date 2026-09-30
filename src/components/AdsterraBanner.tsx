@@ -20,7 +20,7 @@ export default function AdsterraBanner({ className = "" }: { className?: string 
         id={`adsterra-${AD_KEY}`}
         src={`https://pl31586410.profitableratecpmnetwork.com/${AD_KEY}/invoke.js`}
         data-cfasync="false"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
     </aside>
   );

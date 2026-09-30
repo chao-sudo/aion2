@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getClasses } from "@/lib/classes";
 import type { Locale } from "@/i18n/config";
@@ -22,15 +23,12 @@ export default function Footer({ locale }: { locale: Locale }) {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 alt={d.siteName}
-                loading="lazy"
+                src="/icon.png"
                 width={36}
                 height={36}
-                decoding="async"
                 className="rounded-md ring-1 ring-gold/40"
-                src="/icon.png"
               />
               <div>
                 <div className="font-display text-xl text-gold tracking-[0.05em]">{d.siteName}</div>

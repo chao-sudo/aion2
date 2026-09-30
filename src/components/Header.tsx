@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { getDictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/i18n/config";
@@ -29,15 +30,12 @@ export default function Header({ locale }: { locale: Locale }) {
         <Link href={l(locale, "/")} className="flex items-center gap-3 group">
           <div className="relative">
             <div className="absolute inset-0 bg-gold/30 blur-md rounded-full group-hover:bg-gold/60 transition" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt={d.siteName}
-              loading="lazy"
+              src="/icon.png"
               width={42}
               height={42}
-              decoding="async"
               className="relative rounded-md ring-1 ring-gold/40 group-hover:ring-gold transition"
-              src="/icon.png"
             />
           </div>
           <div className="flex flex-col leading-none">

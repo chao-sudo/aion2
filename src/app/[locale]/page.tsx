@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/i18n/config";
 import { pageMetadata } from "@/lib/seo";
@@ -90,13 +91,14 @@ export default async function HomePage({
             <div className="absolute inset-0 bg-gold/40 blur-3xl rounded-full" />
             <div className="absolute inset-[-12px] rounded-full border border-gold/40" />
             <div className="absolute inset-[-30px] rounded-full border border-gold/15" />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt={d.siteName}
-              fetchPriority="high"
-              decoding="async"
-              className="relative rounded-xl object-cover ring-2 ring-gold/50 shadow-gold w-full h-full"
               src="/icon.png"
+              width={144}
+              height={144}
+              priority
+              sizes="(min-width: 768px) 144px, 112px"
+              className="relative h-full w-full rounded-xl object-cover ring-2 ring-gold/50 shadow-gold"
             />
           </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { defaultLocale } from "@/i18n/config";
 import { socialMetadata } from "@/lib/seo";
+import { inter, metamorphous, cormorant } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${metamorphous.variable} ${cormorant.variable}`}>
       <body>{children}</body>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-9DKHR0KMWZ" />
-      <Script id="google-analytics">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-9DKHR0KMWZ" strategy="lazyOnload" />
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

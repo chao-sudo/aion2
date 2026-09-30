@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Metamorphous&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,7 +16,7 @@
 body, html {
   background: var(--bg);
   color: #eaf3ff;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
@@ -102,7 +100,7 @@ body:after {
   background: linear-gradient(90deg, #3c9add, #8fd0ff 50%, #3c9add);
   background-size: 200% 100%;
   color: #04101d;
-  font-family: Metamorphous, "Cormorant Garamond", serif;
+  font-family: var(--font-display), var(--font-cormorant), serif;
   font-weight: 400;
   letter-spacing: 0.05em;
   font-size: 0.95rem;
@@ -123,7 +121,7 @@ body:after {
   border-radius: 999px;
   border: 1px solid hsla(205, 68%, 55%, 0.5);
   color: var(--gold);
-  font-family: Metamorphous, "Cormorant Garamond", serif;
+  font-family: var(--font-display), var(--font-cormorant), serif;
   font-weight: 400;
   font-size: 0.95rem;
   letter-spacing: 0.05em;
@@ -151,7 +149,7 @@ body:after {
   text-transform: uppercase;
 }
 .section-title h2 {
-  font-family: Metamorphous, "Cormorant Garamond", serif;
+  font-family: var(--font-display), var(--font-cormorant), serif;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   font-weight: 700;
   background: linear-gradient(180deg, #fff, #3c9add);
@@ -253,7 +251,7 @@ body:after {
 .prose-game ol li { margin: 0.55rem 0; padding-left: 0.4rem; }
 .prose-game ol li::marker {
   color: var(--gold);
-  font-family: Metamorphous, "Cormorant Garamond", serif;
+  font-family: var(--font-display), var(--font-cormorant), serif;
   font-weight: 700;
 }
 .prose-game h2 {
@@ -295,7 +293,7 @@ body:after {
 .prose-game th {
   background: linear-gradient(180deg, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.05));
   color: var(--gold2);
-  font-family: Metamorphous, "Cormorant Garamond", serif;
+  font-family: var(--font-display), var(--font-cormorant), serif;
   letter-spacing: 0.06em;
   font-size: 0.9rem;
   text-transform: uppercase;
