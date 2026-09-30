@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { locales, isLocale, type Locale } from "@/i18n/config";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AdsterraBanner from "@/components/AdsterraBanner";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -22,6 +23,7 @@ export default async function LocaleLayout({
     <>
       <Header locale={locale} />
       <main className="w-full">{children}</main>
+      <AdsterraBanner />
       <Footer locale={locale} />
     </>
   );
